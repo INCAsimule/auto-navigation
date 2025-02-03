@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4926904084376323220, guid: 17c56660cef6fcc4088e1f30292e8e4a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6058693853080453115, guid: 17c56660cef6fcc4088e1f30292e8e4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -176,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: -6717044640063268569, guid: 16c4fd686d68e236abdd84690378ba57, type: 3}
     - target: {fileID: 6145647731863675197, guid: 17c56660cef6fcc4088e1f30292e8e4a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872243824899630401, guid: 17c56660cef6fcc4088e1f30292e8e4a, type: 3}
       propertyPath: m_Name
@@ -396,10 +400,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb834d7fc50ed9489b25de1254f80f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hull: {fileID: -6717044640063268569, guid: 16c4fd686d68e236abdd84690378ba57, type: 3}
+  hull: {fileID: -2432090755550338912, guid: aab865a753e055a9cacbb4d00685a998, type: 3}
   waterLevel: 0
   g: 9.81
-  mass: 100
+  density_water: 100
+  total_pressure_force: 0
 --- !u!54 &1061068927
 Rigidbody:
   m_ObjectHideFlags: 0
