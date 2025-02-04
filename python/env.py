@@ -67,3 +67,20 @@ class BoatEnv(Env):
         # Optionnel: afficher l'état actuel
         print(f"Position: {self.state}")
 
+
+def main():
+
+    # Se connecter à l'environnement de débogage dans l'éditeur Unity
+    env = UnityEnvironment(file_name=None, seed=1, side_channels=[])
+    print("Environment created")
+    env.reset()
+
+    # Récupérer le nom de comportement (behavior)
+    behavior_name = list(env.behavior_specs.keys())[0]
+    print(f"Behavior name: {behavior_name}")
+    spec = env.behavior_specs[behavior_name]
+    print(f"Observation shape: {spec}")
+
+if __name__ == "__main__":
+    main()
+    
