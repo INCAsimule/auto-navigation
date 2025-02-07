@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BoatAgent : Agent
 {
-    public float vitesse = 5f;
+    public float speed = 5f;
     public Vector3 targetPosition = new Vector3(0, 0, 10);
     private Rigidbody rb;
     
@@ -34,7 +34,7 @@ public class BoatAgent : Agent
         float moveZ = actionBuffers.ContinuousActions[1];
 
         // Appliquer le mouvement
-        Vector3 move = new Vector3(moveX, 0, moveZ) * vitesse;
+        Vector3 move = new Vector3(moveX, 0, moveZ) * speed;
         rb.AddForce(move);
 
         // Récompenses
