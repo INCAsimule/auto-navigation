@@ -71,15 +71,17 @@ class BoatEnv(Env):
 def main():
 
     # Se connecter à l'environnement de débogage dans l'éditeur Unity
-    env = UnityEnvironment(file_name=None, seed=1, side_channels=[])
+    print("Connecting to Unity environment... Please, start the environment")
+    unity_env = UnityEnvironment(file_name=None, seed=1, side_channels=[], no_graphics=True)
+    print("Unity environment connected")
+    env = UnityToGymWrapper(unity_env, uint8_visual=False)
     print("Environment created")
-    env.reset()
+    env.step([0.0])    
+    print("Environment reset")
 
     # Récupérer le nom de comportement (behavior)
-    behavior_name = list(env.behavior_specs.keys())[0]
-    print(f"Behavior name: {behavior_name}")
-    spec = env.behavior_specs[behavior_name]
-    print(f"Observation shape: {spec}")
+    group_spec = list(env.group_spec)
+    print(f"Behavior name: {group_spec}")
 
 if __name__ == "__main__":
     main()
