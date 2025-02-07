@@ -17,16 +17,17 @@ public class Drag : MonoBehaviour
         
     }
 
-
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Utils utils = this.GetComponent<Utils>();
         Rigidbody rb = this.GetComponent<Rigidbody>();
+        
         Vector3 velocity = rb.velocity;
-        rb.AddForceAtPosition(-cF*utils.wettedSurface*waterDensity*Time.deltaTime*velocity.magnitude*velocity, utils.meanCenter);
-        Debug.Log("Drag = " + -cF*utils.wettedSurface*waterDensity*Time.deltaTime*velocity.magnitude*velocity);
+        rb.AddForceAtPosition(-cF*utils.wettedSurface*waterDensity*velocity.magnitude*velocity, utils.meanCenter);
+        //Debug.Log("Drag = " + -cF*utils.wettedSurface*waterDensity*Time.deltaTime*velocity.magnitude*velocity);
+        
         Vector3 angularVelocity = rb.angularVelocity;
-        rb.AddTorque(-cFA*utils.wettedSurface*waterDensity*Time.deltaTime*angularVelocity);
+        rb.AddTorque(-cFA*utils.wettedSurface*waterDensity*angularVelocity);
     }
 }
