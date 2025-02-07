@@ -34,7 +34,7 @@ public class BoatAgent : Agent
         float moveZ = actionBuffers.ContinuousActions[1];
 
         // Appliquer le mouvement
-        Vector3 move = new Vector3(moveX, 0, moveZ) * speed;
+        Vector3 move = new Vector3(moveX, 0, moveZ) * speed * Time.deltaTime;
         rb.AddForce(move);
 
         // Récompenses
