@@ -88,7 +88,13 @@ public class Utils : MonoBehaviour
                 meanCenter += center*area*depth;
             }
         }
-        meanCenter /= wettedSurface*meanDepth;
-        meanDepth /= wettedSurface;
+        if (wettedSurface > 0) {
+            meanCenter /= meanDepth;
+            meanDepth /= wettedSurface;
+        } else {
+            meanCenter = Vector3.zero;
+            meanDepth = 0;
+        }
+        
     }
 }

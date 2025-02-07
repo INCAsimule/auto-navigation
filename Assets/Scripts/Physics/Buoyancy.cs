@@ -30,7 +30,13 @@ public class Buoyancy : MonoBehaviour
             Debug.LogWarning("meanDepth is NaN");
             return;
         }
+        Debug.DrawLine(utils.meanCenter, utils.meanCenter + utils.wettedSurface*utils.meanDepth*g*waterDensity*Vector3.up*Time.deltaTime);
+        Vector3 centerProj = new Vector3(utils.meanCenter.x, -utils.meanDepth, utils.meanCenter.z);
+        Debug.DrawLine(centerProj, centerProj + Vector3.right);
+        Debug.DrawLine(centerProj, centerProj + Vector3.back);
+        
         rb.AddForceAtPosition(utils.wettedSurface*utils.meanDepth*g*waterDensity*Vector3.up*Time.deltaTime, utils.meanCenter);
+        
         //rb.AddForce(utils.wettedSurface*utils.meanDepth*g*waterDensity*Vector3.up);
     }
 
