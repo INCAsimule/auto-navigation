@@ -26,7 +26,10 @@ public class Buoyancy : MonoBehaviour
         Rigidbody rb = this.GetComponent<Rigidbody>();
         
         Debug.Log("S = " + utils.wettedSurface + " | h = " + utils.meanDepth + " | B = " + utils.meanCenter);
-        
+        if (float.IsNaN(utils.meanDepth)) {
+            Debug.LogWarning("meanDepth is NaN");
+            return;
+        }
         rb.AddForceAtPosition(utils.wettedSurface*utils.meanDepth*g*waterDensity*Vector3.up*Time.deltaTime, utils.meanCenter);
         //rb.AddForce(utils.wettedSurface*utils.meanDepth*g*waterDensity*Vector3.up);
     }

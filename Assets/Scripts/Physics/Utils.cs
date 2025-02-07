@@ -12,7 +12,6 @@ public class Utils : MonoBehaviour
     public float meanDepth;
     public Vector3 meanCenter;
     
-    
     public float waterHeight = 0f;
     
     public Mesh hull;
