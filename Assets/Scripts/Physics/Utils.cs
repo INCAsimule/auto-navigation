@@ -33,6 +33,7 @@ public class Utils : MonoBehaviour
         Mesh mesh = hull;
         Rigidbody rb = this.GetComponent<Rigidbody>();
         int[] triangles = mesh.triangles;
+        Vector3[] normals = mesh.normals;
         Vector3[] vertices = mesh.vertices;
         // Ensure we have valid mesh and rigidbody references.
         if (mesh == null || rb == null)
@@ -66,8 +67,6 @@ public class Utils : MonoBehaviour
             // Check if the triangle's center is below the water surface.
             if (center.y < waterHeight)
             {
-                
-                
                 
                 p0.y = 0;
                 p1.y = 0;
