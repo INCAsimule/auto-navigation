@@ -27,7 +27,7 @@ public class Utils : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         //Mesh mesh = this.GetComponent<MeshFilter>().mesh;
         Mesh mesh = hull;
@@ -67,7 +67,6 @@ public class Utils : MonoBehaviour
             // Check if the triangle's center is below the water surface.
             if (center.y < waterHeight)
             {
-                
                 p0.y = 0;
                 p1.y = 0;
                 p2.y = 0;

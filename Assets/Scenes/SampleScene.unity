@@ -445,7 +445,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061068921}
   serializedVersion: 4
-  m_Mass: 100
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -538,8 +538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4306cdadbd727127c987856cb290df03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cF: 1
-  cFA: 1
+  cF: 0.5
+  cFA: 0.2
   waterDensity: 1000
 --- !u!1 &1621981428
 GameObject:

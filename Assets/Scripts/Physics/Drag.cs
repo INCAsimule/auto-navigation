@@ -28,6 +28,6 @@ public class Drag : MonoBehaviour
         //Debug.Log("Drag = " + -cF*utils.wettedSurface*waterDensity*Time.deltaTime*velocity.magnitude*velocity);
         
         Vector3 angularVelocity = rb.angularVelocity;
-        rb.AddTorque(-cFA*utils.wettedSurface*waterDensity*angularVelocity);
+        rb.AddTorque(-cFA*utils.wettedSurface*waterDensity*angularVelocity.magnitude*angularVelocity);
     }
 }
